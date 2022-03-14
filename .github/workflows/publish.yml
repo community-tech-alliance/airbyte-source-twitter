@@ -1,0 +1,25 @@
+name: publish_image
+
+env: #TODO() be sure to manually update the image tag!
+  IMAGE_TAG: "0.0.0"
+
+on: [push]
+
+jobs:
+  publish-source-twitter-image:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: community-tech-alliance
+        password: ${{ secrets.CR_PAT }}
+
+    - name: Build the source-twitter Docker image
+      run: |
+        docker build . --tag ghcr.io/community-tech-alliance/source-twitter:$IMAGE_TAG
+        docker push ghcr.io/community-tech-alliance/source-twitter:$IMAGE_TAG
