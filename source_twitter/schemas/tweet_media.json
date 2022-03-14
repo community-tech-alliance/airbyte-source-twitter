@@ -1,0 +1,54 @@
+{
+  "properties": {
+     "media_key": {
+      "type": ["string"]
+      },
+     "type": {
+       "type": ["string"]
+     },
+     "duration_ms": {
+       "type": ["integer"]
+     },
+     "height": {
+       "type": ["integer"]
+     },
+     "non_public_metrics": {
+         "type": ["object"],
+         "properties": {
+            "playback_0_count": {"type": "integer"},
+            "playback_25_count": {"type": "integer"},
+            "playback_50_count": {"type": "integer"},
+            "playback_75_count": {"type": "integer"},
+            "playback_100_count": {"type": "integer"}
+         }
+     },
+    "organic_metrics": {
+        "type": ["object"],
+        "properties": {
+            "playback_0_count": {"type": "integer"},
+            "playback_25_count": {"type": "integer"},
+            "playback_50_count": {"type": "integer"},
+            "playback_75_count": {"type": "integer"},
+            "playback_100_count": {"type": "integer"},
+            "view_count": {"type": "integer"}
+        }
+    },
+     "preview_image_url": {
+       "type": ["string"]
+     },
+     "public_metrics": {
+         "type": ["object"],
+         "properties": {
+            "view_count": {"type": "integer"}
+         }
+     },
+     "height": {
+       "type": ["integer"]
+     },
+     "alt_text": {
+       "type": ["string"]
+     }
+  },
+  "type": "object",
+  "additionalProperties": false
+}

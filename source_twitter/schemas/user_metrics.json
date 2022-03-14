@@ -1,0 +1,115 @@
+{
+  "properties": {
+     "id": {
+      "type": ["string"]
+      },
+     "name": {
+      "type": ["string"]
+      },
+     "username": {
+      "type": ["string"]
+      },
+     "created_at": {
+      "type": ["string"]
+      },
+     "description": {
+      "type": ["string"]
+      },
+		"entities": {
+			"type": ["object"],
+			"properties": {
+        "url": {
+          "type": ["object"],
+          "properties": {
+            "urls": {
+              "type": ["array"],
+              "properties": {
+                "start": {"type": "integer"},
+                "end": {"type": "integer"},
+                "url": {"type": "string"},
+                "expanded_url": {"type": "string"},
+                "display_url": {"type": "string"}
+                }
+              }
+            }
+          },
+        "description": {
+          "type": ["object"],
+          "properties": {
+            "urls": {
+              "type": ["array"],
+              "properties": {
+                "start": {"type": "integer"},
+                "end": {"type": "integer"},
+                "url": {"type": "string"},
+                "expanded_url": {"type": "string"},
+                "display_url": {"type": "string"}
+                }
+              },
+            "hashtags": {
+              "type": ["array"],
+              "properties": {
+                "start": {"type": "integer"},
+                "end": {"type": "integer"},
+                "tag": {"type": "string"}
+                }
+              },
+            "mentions": {
+              "type": ["array"],
+              "properties": {
+                "start": {"type": "integer"},
+                "end": {"type": "integer"},
+                "tag": {"type": "string"}
+                }
+              },
+            "cashtags": {
+              "type": ["array"],
+              "properties": {
+                "start": {"type": "integer"},
+                "end": {"type": "integer"},
+                "tag": {"type": "string"}
+                }
+              }
+          }
+        }
+      }
+     },
+     "location": {
+      "type": ["string"]
+      },
+     "pinned_tweet_id": {
+      "type": ["integer"]
+      },
+     "profile_image_url": {
+      "type": ["string"]
+      },
+     "protected": {
+      "type": ["boolean"]
+      },
+		 "public_metrics": {
+			"type": ["object"],
+			"properties": {
+				"followers_count": {
+					"type": "integer"
+				},
+				"following_count": {
+					"type": "integer"
+				},
+				"tweet_count": {
+					"type": "integer"
+				},
+				"listed_count": {
+					"type": "integer"
+				}
+			}
+		},
+     "url": {
+      "type": ["string"]
+      },
+     "verified": {
+      "type": ["boolean"]
+      }
+  },
+  "type": "object",
+  "additionalProperties": false
+}

@@ -1,0 +1,42 @@
+{
+  "documentationUrl": "https://docsurl.com",
+  "connectionSpecification": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Twitter Engagement Spec",
+    "type": "object",
+    "required": ["consumer_key","consumer_secret","access_token","token_secret","twitter_username"],
+    "additionalProperties": false,
+    "properties": {
+      "consumer_key": {
+        "type": "string",
+        "title": "Consumer key",
+        "airbyte_secret": false,
+        "order": 1
+      },
+      "consumer_secret": {
+        "type": "string",
+        "title": "Consumer secret",
+        "airbyte_secret": true,
+        "order": 2
+      },
+      "access_token": {
+        "type": "string",
+        "title": "Access token (aka OAuth token)",
+        "airbyte_secret": false,
+        "order": 3
+      },
+      "token_secret": {
+        "type": "string",
+        "title": "Token secret (aka OAuth secret)",
+        "airbyte_secret": true,
+        "order": 4
+      },
+      "twitter_username": {
+        "type": "string",
+        "title": "Twitter username",
+        "airbyte_secret": false,
+        "order": 5
+      }
+    }
+  }
+}
