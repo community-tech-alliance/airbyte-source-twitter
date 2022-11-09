@@ -149,7 +149,7 @@ class TwitterStream(HttpStream, ABC):
 
         # increment our running total of results fetched
         self.results_count += response_json.get("meta").get("result_count")
-        logging.warn(f"RESULTS SO FAR: {self.results_count}")
+        #logging.warn(f"RESULTS SO FAR: {self.results_count}")
 
         if response_json.get("meta").get("next_token") and self.results_count <= self.max_total_results:
             pagination_token = response_json.get("meta").get("next_token")
@@ -223,8 +223,9 @@ class TweetMedia(TwitterStream):
     ) -> Iterable[Mapping]:
 
         response_json = response.json()
-        yield from response_json.get("includes", []).get("media", [])  # Twitter puts records in a container array "data"
 
+        if 'includes' in response_json:
+            yield response_json['includes']['media'][0]
 
     def path(
         self,
@@ -265,8 +266,9 @@ class TweetPlaces(TwitterStream):
     ) -> Iterable[Mapping]:
 
         response_json = response.json()
-        yield from response_json.get("includes", []).get("places", [])  # Twitter puts records in a container array "data"
-
+        
+        if 'includes' in response_json:
+            yield response_json['includes']['places'][0]
 
     def path(
         self,
